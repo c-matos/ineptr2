@@ -1,0 +1,17 @@
+^ineptr2\.Rproj$
+^\.Rproj\.user$
+^LICENSE\.md$
+^dev$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^README\.Rmd$
+^\.github$
+^vignettes/articles$
+^CRAN-SUBMISSION$
+^cran-comments\.md$
+^codecov\.yml$
+^doc$
+^Meta$
+^CLAUDE.local.md$
+^coverage.xml$
