@@ -1,0 +1,26 @@
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://c-matos.github.io/ineptr2/404.html</loc></url>
+<url><loc>https://c-matos.github.io/ineptr2/LICENSE-text.html</loc></url>
+<url><loc>https://c-matos.github.io/ineptr2/LICENSE.html</loc></url>
+<url><loc>https://c-matos.github.io/ineptr2/articles/caching.html</loc></url>
+<url><loc>https://c-matos.github.io/ineptr2/articles/index.html</loc></url>
+<url><loc>https://c-matos.github.io/ineptr2/articles/ineptr2.html</loc></url>
+<url><loc>https://c-matos.github.io/ineptr2/articles/whats_new.html</loc></url>
+<url><loc>https://c-matos.github.io/ineptr2/authors.html</loc></url>
+<url><loc>https://c-matos.github.io/ineptr2/index.html</loc></url>
+<url><loc>https://c-matos.github.io/ineptr2/reference/INEClient-fields.html</loc></url>
+<url><loc>https://c-matos.github.io/ineptr2/reference/INEClient.html</loc></url>
+<url><loc>https://c-matos.github.io/ineptr2/reference/calc_dims_length_from_raw.html</loc></url>
+<url><loc>https://c-matos.github.io/ineptr2/reference/extract_dim_values.html</loc></url>
+<url><loc>https://c-matos.github.io/ineptr2/reference/filter_cached_data.html</loc></url>
+<url><loc>https://c-matos.github.io/ineptr2/reference/finalize_chunk.html</loc></url>
+<url><loc>https://c-matos.github.io/ineptr2/reference/gracefully_fail.html</loc></url>
+<url><loc>https://c-matos.github.io/ineptr2/reference/index.html</loc></url>
+<url><loc>https://c-matos.github.io/ineptr2/reference/ineptr2-package.html</loc></url>
+<url><loc>https://c-matos.github.io/ineptr2/reference/is_filter_subset.html</loc></url>
+<url><loc>https://c-matos.github.io/ineptr2/reference/normalize_dim_filters.html</loc></url>
+<url><loc>https://c-matos.github.io/ineptr2/reference/process_ine_catalog.html</loc></url>
+<url><loc>https://c-matos.github.io/ineptr2/reference/process_ine_data.html</loc></url>
+<url><loc>https://c-matos.github.io/ineptr2/reference/records_to_df.html</loc></url>
+</urlset>
+
