@@ -27,7 +27,7 @@ ine <- INEClient$new(use_cache = TRUE, cache_dir = "my_cache")
 
 ## What gets cached
 
-The cache has three multiple layers, each serving a different purpose:
+The cache has multiple layers, each serving a different purpose:
 
 | Layer          | File pattern                                    | Format | Purpose                                        |
 |----------------|-------------------------------------------------|--------|------------------------------------------------|
