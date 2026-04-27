@@ -27,7 +27,7 @@ ine <- INEClient$new(use_cache = TRUE, cache_dir = "my_cache")
 
 ## What gets cached
 
-The cache has three layers, each serving a different purpose:
+The cache has three multiple layers, each serving a different purpose:
 
 | Layer          | File pattern                                    | Format | Purpose                                        |
 |----------------|-------------------------------------------------|--------|------------------------------------------------|
@@ -100,7 +100,7 @@ into a tidy data frame and caches the result as an `.rds` file. This
 cache also stores which dimension filters were used.
 
 On subsequent calls, the cache is reused **only if the new request is
-equalto or a subset** of what was previously cached. For example:
+equal to or a subset** of what was previously cached. For example:
 
 ``` r
 # First call: fetches and caches data for three regions
@@ -135,8 +135,8 @@ ine$download_data("0008273", dim2 = c("11", "15", "17"))
 #> Dimension filters changed. Clearing chunk cache.
 ```
 
-As a general rule, if 1. you are unsure of what dimensions you may need
-and 2. disk space is not an issue, it’s better to download the full
+As a general rule, if 1) you are unsure of what dimensions you may need
+and 2) disk space is not an issue, it’s better to download the full
 indicator, and then work with the cache.
 
 You can also manually clear the cache:

@@ -1,4 +1,4 @@
 # License
 
-    YEAR: 2026
-    COPYRIGHT HOLDER: Carlos Matos
+    YEAR: 2023
+    COPYRIGHT HOLDER: ineptr2 authors

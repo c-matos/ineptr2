@@ -97,7 +97,8 @@ override it:</p>
 <div class="section level2">
 <h2 id="what-gets-cached">What gets cached<a class="anchor" aria-label="anchor" href="#what-gets-cached"></a>
 </h2>
-<p>The cache has three layers, each serving a different purpose:</p>
+<p>The cache has three multiple layers, each serving a different
+purpose:</p>
 <table class="table">
 <colgroup>
 <col width="18%">
@@ -199,7 +200,7 @@ processes them into a tidy data frame and caches the result as an
 <code>.rds</code> file. This cache also stores which dimension filters
 were used.</p>
 <p>On subsequent calls, the cache is reused <strong>only if the new
-request is equalto or a subset</strong> of what was previously cached.
+request is equal to or a subset</strong> of what was previously cached.
 For example:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># First call: fetches and caches data for three regions</span></span>
@@ -230,8 +231,8 @@ different filters produce different URLs.</p>
 <span><span class="co"># Different filters: chunk cache is cleared and download starts from scratch</span></span>
 <span><span class="va">ine</span><span class="op">$</span><span class="fu">download_data</span><span class="op">(</span><span class="st">"0008273"</span>, dim2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"11"</span>, <span class="st">"15"</span>, <span class="st">"17"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Dimension filters changed. Clearing chunk cache.</span></span></code></pre></div>
-<p>As a general rule, if 1. you are unsure of what dimensions you may
-need and 2. disk space is not an issue, it’s better to download the full
+<p>As a general rule, if 1) you are unsure of what dimensions you may
+need and 2) disk space is not an issue, it’s better to download the full
 indicator, and then work with the cache.</p>
 <p>You can also manually clear the cache:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">

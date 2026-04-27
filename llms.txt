@@ -8,12 +8,6 @@ INE publishes over 13 000 statistical indicators covering demographics,
 health, economy, education, environment and more. The API provides
 programmatic access to them.
 
-ineptr2 is a ground-up rewrite of
-[ineptR](https://github.com/c-matos/ineptR), with a new interface, fewer
-dependencies, and many breaking changes. It was released as a separate
-package so that existing ineptR workflows continue to work, allowing
-users to migrate at their own pace.
-
 Working with the API directly can be cumbersome:
 
 - Responses are capped at 1 million returned rows per request. Multiple
@@ -105,8 +99,7 @@ dimension.
 
 ## Learn more
 
-- [Get
-  started](https://c-matos.github.io/ineptr2/articles/get_started.html)
+- [Get started](https://c-matos.github.io/ineptr2/articles/ineptr2.html)
   — full walkthrough: creating a client, exploring indicators,
   downloading data, and caching.
 - [How caching
@@ -114,7 +107,7 @@ dimension.
   chunk cache, manifests, resume support, and cache invalidation.
 - [What changed from
   ineptR](https://c-matos.github.io/ineptr2/articles/whats_new.html) —
-  differences from the ineptR package.
+  differences from the previous version.
 
 # Package index
 

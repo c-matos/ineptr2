@@ -40,7 +40,7 @@ ineptR exported five standalone functions (`get_ine_data()`,
 
 ``` r
 # ineptR — repeat lang on every call
-df   <- get_ine_data("0008273", lang = "EN")
+df <- get_ine_data("0008273", lang = "EN")
 meta <- get_metadata("0008273", lang = "EN")
 dims <- get_dim_values("0008273", lang = "EN")
 ```
@@ -51,7 +51,7 @@ methods:
 ``` r
 # ineptr2 — configure once, use everywhere
 ine <- INEine$new(lang = "EN")
-df   <- ine$get_data("0008273")
+df <- ine$get_data("0008273")
 meta <- ine$get_metadata("0008273")
 dims <- ine$get_dim_values("0008273")
 ```
@@ -81,14 +81,14 @@ gone. The package installs faster and has a smaller footprint.
 ## Smarter chunking
 
 The INE API limits each response to a maximum number of rows. ineptR
-implemented a maximum of 30 000 rows per request (`max_cells`), which
+implemented a maximum of 40 000 rows per request (`max_cells`), which
 meant that large indicators required hundreds or thousands of small API
 calls.
 
 ineptr2 defaults to a much higher limit (`row_limit = 1 000 000`) and
-uses a greedy algorithm to split dimensions only when necessary. The
-result is far fewer HTTP requests for the same data. You can preview the
-chunk plan before committing to a download:
+splitting logic is improved (Dimension 1 now accepts multiple values per
+call). The result is far fewer HTTP requests for the same data. You can
+preview the chunk plan before committing to a download:
 
 ``` r
 ine$preview_chunks("0008206")
@@ -112,7 +112,7 @@ ineptr2 introduces a chunk-based file cache with three layers:
 
 Caching is enabled via `ine$use_cache <- TRUE` or at construction time,
 and the cache directory is configurable. See the [How caching
-works](https://c-matos.github.io/ineptr2/articles/caching.md) article
+works](https://c-matos.github.io/ineptr2/articles/caching.html) article
 for a detailed walkthrough.
 
 ## Download and load as separate steps

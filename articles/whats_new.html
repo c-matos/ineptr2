@@ -121,7 +121,7 @@ requires 66 calls, compared to over 2000 calls with V1.</p>
 to pass <code>lang</code> each time. Caching was not implemented:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># ineptR — repeat lang on every call</span></span>
-<span><span class="va">df</span>   <span class="op">&lt;-</span> <span class="fu">get_ine_data</span><span class="op">(</span><span class="st">"0008273"</span>, lang <span class="op">=</span> <span class="st">"EN"</span><span class="op">)</span></span>
+<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu">get_ine_data</span><span class="op">(</span><span class="st">"0008273"</span>, lang <span class="op">=</span> <span class="st">"EN"</span><span class="op">)</span></span>
 <span><span class="va">meta</span> <span class="op">&lt;-</span> <span class="fu">get_metadata</span><span class="op">(</span><span class="st">"0008273"</span>, lang <span class="op">=</span> <span class="st">"EN"</span><span class="op">)</span></span>
 <span><span class="va">dims</span> <span class="op">&lt;-</span> <span class="fu">get_dim_values</span><span class="op">(</span><span class="st">"0008273"</span>, lang <span class="op">=</span> <span class="st">"EN"</span><span class="op">)</span></span></code></pre></div>
 <p>ineptr2 wraps everything in a single R6 object. Configure once, call
@@ -129,7 +129,7 @@ methods:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># ineptr2 — configure once, use everywhere</span></span>
 <span><span class="va">ine</span> <span class="op">&lt;-</span> <span class="va">INEine</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>lang <span class="op">=</span> <span class="st">"EN"</span><span class="op">)</span></span>
-<span><span class="va">df</span>   <span class="op">&lt;-</span> <span class="va">ine</span><span class="op">$</span><span class="fu">get_data</span><span class="op">(</span><span class="st">"0008273"</span><span class="op">)</span></span>
+<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="va">ine</span><span class="op">$</span><span class="fu">get_data</span><span class="op">(</span><span class="st">"0008273"</span><span class="op">)</span></span>
 <span><span class="va">meta</span> <span class="op">&lt;-</span> <span class="va">ine</span><span class="op">$</span><span class="fu">get_metadata</span><span class="op">(</span><span class="st">"0008273"</span><span class="op">)</span></span>
 <span><span class="va">dims</span> <span class="op">&lt;-</span> <span class="va">ine</span><span class="op">$</span><span class="fu">get_dim_values</span><span class="op">(</span><span class="st">"0008273"</span><span class="op">)</span></span></code></pre></div>
 <p>The are now more concise (now: get_data; before: get_ine_data) and
@@ -160,14 +160,14 @@ gone. The package installs faster and has a smaller footprint.</p>
 <h2 id="smarter-chunking">Smarter chunking<a class="anchor" aria-label="anchor" href="#smarter-chunking"></a>
 </h2>
 <p>The INE API limits each response to a maximum number of rows. ineptR
-implemented a maximum of 30 000 rows per request
+implemented a maximum of 40 000 rows per request
 (<code>max_cells</code>), which meant that large indicators required
 hundreds or thousands of small API calls.</p>
 <p>ineptr2 defaults to a much higher limit
-(<code>row_limit = 1 000 000</code>) and uses a greedy algorithm to
-split dimensions only when necessary. The result is far fewer HTTP
-requests for the same data. You can preview the chunk plan before
-committing to a download:</p>
+(<code>row_limit = 1 000 000</code>) and splitting logic is improved
+(Dimension 1 now accepts multiple values per call). The result is far
+fewer HTTP requests for the same data. You can preview the chunk plan
+before committing to a download:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ine</span><span class="op">$</span><span class="fu">preview_chunks</span><span class="op">(</span><span class="st">"0008206"</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -192,8 +192,8 @@ request is a subset of what was cached</li>
 to detect changes without a full download</li>
 </ul>
 <p>Caching is enabled via <code>ine$use_cache &lt;- TRUE</code> or at
-construction time, and the cache directory is configurable. See the <a href="caching.html">How caching works</a> article for a detailed
-walkthrough.</p>
+construction time, and the cache directory is configurable. See the <a href="https://c-matos.github.io/ineptr2/articles/caching.html">How
+caching works</a> article for a detailed walkthrough.</p>
 </div>
 <div class="section level2">
 <h2 id="download-and-load-as-separate-steps">Download and load as separate steps<a class="anchor" aria-label="anchor" href="#download-and-load-as-separate-steps"></a>

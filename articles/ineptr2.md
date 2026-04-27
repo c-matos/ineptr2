@@ -200,7 +200,7 @@ ine$use_cache <- TRUE
 With caching on, `get_data()` stores the processed result. Subsequent
 calls with the same or narrower filters are served from cache. See the
 [How caching
-works](https://c-matos.github.io/ineptr2/articles/caching.md) article
+works](https://c-matos.github.io/ineptr2/articles/caching.html) article
 for details.
 
 ## Check for updates
