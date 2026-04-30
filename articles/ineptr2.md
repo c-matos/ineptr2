@@ -179,10 +179,10 @@ This streams data to disk without holding it in memory:
 ine$use_cache <- TRUE
 ine$cache_dir <- file.path(tempdir(), "ineptr2_vignette")
 ine$download_data("0008273", dim1 = "S7A2023")
-#> Metadata cached at: /tmp/Rtmpsk7Iwt/ineptr2_vignette/ine_0008273_EN_meta.json
+#> Metadata cached at: /tmp/Rtmpj8kpsp/ineptr2_vignette/ine_0008273_EN_meta.json
 #> Downloaded chunk 1/1
 #> All 1 chunks downloaded and cached
-#> Data downloaded to: /tmp/Rtmpsk7Iwt/ineptr2_vignette/ine_0008273_EN_chunks
+#> Data downloaded to: /tmp/Rtmpj8kpsp/ineptr2_vignette/ine_0008273_EN_chunks
 ```
 
 If a download is interrupted, calling `download_data()` again resumes
@@ -245,7 +245,7 @@ ine$is_valid("0008273")
 #> Using cached metadata
 #> [1] TRUE
 ine$is_valid("0000000")
-#> Metadata cached at: /tmp/Rtmpsk7Iwt/ineptr2_vignette/ine_0000000_EN_meta.json
+#> Metadata cached at: /tmp/Rtmpj8kpsp/ineptr2_vignette/ine_0000000_EN_meta.json
 #> [1] FALSE
 ```
 
@@ -298,5 +298,5 @@ ine$clear_cache("0008273")
 # everything
 # WARNING: This will remove `cache_dir` and all its contents.
 ine$clear_cache()
-#> Cache cleared: /tmp/Rtmpsk7Iwt/ineptr2_vignette
+#> Cache cleared: /tmp/Rtmpj8kpsp/ineptr2_vignette
 ```

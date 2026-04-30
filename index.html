@@ -78,7 +78,7 @@
 <p>Working with the API directly can be cumbersome:</p>
 <ul>
 <li>Responses are capped at 1 million returned rows per request. Multiple requests may be required for larger indicators.</li>
-<li>Indicator structure (dimensions, codes, time periods) must previously known or be explored through separate metadata endpoints before you can build a more specific query.</li>
+<li>Indicator structure (dimensions, codes, time periods) must be previously known or be explored through separate metadata endpoints before you can build a more specific query.</li>
 <li>There is no built-in way to resume interrupted downloads or avoid redundant requests.</li>
 </ul>
 <p>ineptr2 handles all of this through a single R6 client:</p>
@@ -97,11 +97,11 @@
 </h2>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># From CRAN</span></span>
-<span><span class="co"># install.packages("ineptr2") # Currently waiting publication on CRAN</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"ineptr2"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Development version from GitHub</span></span>
 <span><span class="co"># install.packages("devtools")</span></span>
-<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"c-matos/ineptr2"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"c-matos/ineptr2"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="quick-example">Quick example<a class="anchor" aria-label="anchor" href="#quick-example"></a>
