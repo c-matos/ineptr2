@@ -28,7 +28,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">ineptr2</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -81,7 +81,7 @@ client, exploring an indicator, and fetching data.</p>
 </h2>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># From GitHub</span></span>
-<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"c-matos/ineptr2"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"ineptr2"</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://c-matos.github.io/ineptr2/">ineptr2</a></span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -196,20 +196,20 @@ downloads and processes in one step:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="va">ine</span><span class="op">$</span><span class="fu">get_data</span><span class="op">(</span><span class="st">"0008273"</span>, dim1 <span class="op">=</span> <span class="st">"S7A2023"</span>, dim2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"PT"</span>, <span class="st">"1"</span>, <span class="st">"2"</span>, <span class="st">"3"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span>
-<span><span class="co">#&gt;   dim_1 geocod                     geodsg dim_3 dim_3_t dim_4           dim_4_t</span></span>
-<span><span class="co">#&gt; 1  2023      2 Região Autónoma dos Açores     1       M    92 85 and more years</span></span>
-<span><span class="co">#&gt; 2  2023      3 Região Autónoma da Madeira     1       M    92 85 and more years</span></span>
-<span><span class="co">#&gt; 3  2023      2 Região Autónoma dos Açores     1       M    91     80 - 84 years</span></span>
-<span><span class="co">#&gt; 4  2023      3 Região Autónoma da Madeira     1       M    91     80 - 84 years</span></span>
-<span><span class="co">#&gt; 5  2023      2 Região Autónoma dos Açores     2       F    91     80 - 84 years</span></span>
-<span><span class="co">#&gt; 6  2023      2 Região Autónoma dos Açores     1       M    82     75 - 79 years</span></span>
+<span><span class="co">#&gt;   dim_1 geocod                     geodsg dim_3 dim_3_t dim_4     dim_4_t</span></span>
+<span><span class="co">#&gt; 1  2023      3 Região Autónoma da Madeira     1       M    11 0 - 4 years</span></span>
+<span><span class="co">#&gt; 2  2023      3 Região Autónoma da Madeira     2       F    11 0 - 4 years</span></span>
+<span><span class="co">#&gt; 3  2023      3 Região Autónoma da Madeira     T      MF    11 0 - 4 years</span></span>
+<span><span class="co">#&gt; 4  2023      3 Região Autónoma da Madeira     1       M    12 5 - 9 years</span></span>
+<span><span class="co">#&gt; 5  2023      3 Região Autónoma da Madeira     2       F    12 5 - 9 years</span></span>
+<span><span class="co">#&gt; 6  2023      3 Região Autónoma da Madeira     T      MF    12 5 - 9 years</span></span>
 <span><span class="co">#&gt;   ind_string valor</span></span>
-<span><span class="co">#&gt; 1      1 361  1361</span></span>
-<span><span class="co">#&gt; 2      1 731  1731</span></span>
-<span><span class="co">#&gt; 3      1 911  1911</span></span>
-<span><span class="co">#&gt; 4      2 441  2441</span></span>
-<span><span class="co">#&gt; 5      3 034  3034</span></span>
-<span><span class="co">#&gt; 6      3 299  3299</span></span></code></pre></div>
+<span><span class="co">#&gt; 1      4 819  4819</span></span>
+<span><span class="co">#&gt; 2      4 504  4504</span></span>
+<span><span class="co">#&gt; 3      9 323  9323</span></span>
+<span><span class="co">#&gt; 4      5 226  5226</span></span>
+<span><span class="co">#&gt; 5      5 105  5105</span></span>
+<span><span class="co">#&gt; 6     10 331 10331</span></span></code></pre></div>
 <p>Dimension filters use the <code>categ_cod</code> values from
 <code>get_dim_values()</code>. If you omit a dimension, all values are
 returned.</p>
@@ -221,12 +221,12 @@ returned.</p>
 later. This streams data to disk without holding it in memory:</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ine</span><span class="op">$</span><span class="va">use_cache</span> <span class="op">&lt;-</span> <span class="cn">TRUE</span></span>
-<span><span class="va">ine</span><span class="op">$</span><span class="va">cache_dir</span> <span class="op">&lt;-</span> <span class="st">"C:/R/my_cache_dir"</span></span>
+<span><span class="va">ine</span><span class="op">$</span><span class="va">cache_dir</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"ineptr2_vignette"</span><span class="op">)</span></span>
 <span><span class="va">ine</span><span class="op">$</span><span class="fu">download_data</span><span class="op">(</span><span class="st">"0008273"</span>, dim1 <span class="op">=</span> <span class="st">"S7A2023"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Metadata cached at: C:/R/my_cache_dir/ine_0008273_EN_meta.json</span></span>
+<span><span class="co">#&gt; Metadata cached at: /tmp/Rtmpsk7Iwt/ineptr2_vignette/ine_0008273_EN_meta.json</span></span>
 <span><span class="co">#&gt; Downloaded chunk 1/1</span></span>
 <span><span class="co">#&gt; All 1 chunks downloaded and cached</span></span>
-<span><span class="co">#&gt; Data downloaded to: /home/runner/work/ineptr2/ineptr2/vignettes/C:/R/my_cache_dir/ine_0008273_EN_chunks</span></span></code></pre></div>
+<span><span class="co">#&gt; Data downloaded to: /tmp/Rtmpsk7Iwt/ineptr2_vignette/ine_0008273_EN_chunks</span></span></code></pre></div>
 <p>If a download is interrupted, calling <code>download_data()</code>
 again resumes from where it left off.</p>
 <p>Load the raw data later (even in a new session):</p>
@@ -275,7 +275,7 @@ Alternatively, provide a specific <code>last_updated</code> date.</p>
 <span><span class="co">#&gt; Using cached metadata</span></span>
 <span><span class="co">#&gt; [1] TRUE</span></span>
 <span><span class="va">ine</span><span class="op">$</span><span class="fu">is_valid</span><span class="op">(</span><span class="st">"0000000"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Metadata cached at: /home/runner/work/ineptr2/ineptr2/vignettes/C:/R/my_cache_dir/ine_0000000_EN_meta.json</span></span>
+<span><span class="co">#&gt; Metadata cached at: /tmp/Rtmpsk7Iwt/ineptr2_vignette/ine_0000000_EN_meta.json</span></span>
 <span><span class="co">#&gt; [1] FALSE</span></span></code></pre></div>
 </div>
 <div class="section level2">
@@ -322,7 +322,7 @@ client’s language setting:</p>
 <span><span class="co"># everything</span></span>
 <span><span class="co"># WARNING: This will remove `cache_dir` and all its contents.</span></span>
 <span><span class="va">ine</span><span class="op">$</span><span class="fu">clear_cache</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Cache cleared: /home/runner/work/ineptr2/ineptr2/vignettes/C:/R/my_cache_dir</span></span></code></pre></div>
+<span><span class="co">#&gt; Cache cleared: /tmp/Rtmpsk7Iwt/ineptr2_vignette</span></span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>

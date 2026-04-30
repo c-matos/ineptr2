@@ -39,6 +39,7 @@ response size (from 40k to 1M rows).
 ## Installation
 
 ``` r
+
 # From CRAN
 # install.packages("ineptr2") # Currently waiting publication on CRAN
 
@@ -50,6 +51,7 @@ devtools::install_github("c-matos/ineptr2")
 ## Quick example
 
 ``` r
+
 library(ineptr2)
 
 ine <- INEClient$new()
@@ -70,6 +72,7 @@ For larger indicators, you can filter by dimension to get only what you
 need:
 
 ``` r
+
 # Resident population, year 2023, NUTS 1 regions only
 df <- ine$get_data(
   "0008273",

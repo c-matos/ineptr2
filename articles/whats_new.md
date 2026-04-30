@@ -39,6 +39,7 @@ ineptR exported five standalone functions (`get_ine_data()`,
 `lang` each time. Caching was not implemented:
 
 ``` r
+
 # ineptR — repeat lang on every call
 df <- get_ine_data("0008273", lang = "EN")
 meta <- get_metadata("0008273", lang = "EN")
@@ -49,6 +50,7 @@ ineptr2 wraps everything in a single R6 object. Configure once, call
 methods:
 
 ``` r
+
 # ineptr2 — configure once, use everywhere
 ine <- INEine$new(lang = "EN")
 df <- ine$get_data("0008273")
@@ -91,6 +93,7 @@ call). The result is far fewer HTTP requests for the same data. You can
 preview the chunk plan before committing to a download:
 
 ``` r
+
 ine$preview_chunks("0008206")
 ```
 
@@ -123,11 +126,11 @@ memory at once and risking out-of-emory errors.
 
 ineptr2 separates the two concerns:
 
-| Step     | Method                | What it does                                              |
-|----------|-----------------------|-----------------------------------------------------------|
-| Download | `ine$download_data()` | Streams chunks to disk, nothing held in memory            |
-| Load     | `ine$load_raw_data()` | Reads cached *raw* chunks back into R.                    |
-| Both     | `ine$get_data()`      | Convenience wrapper that downloads, loads and cleans data |
+| Step | Method | What it does |
+|----|----|----|
+| Download | `ine$download_data()` | Streams chunks to disk, nothing held in memory |
+| Load | `ine$load_raw_data()` | Reads cached *raw* chunks back into R. |
+| Both | `ine$get_data()` | Convenience wrapper that downloads, loads and cleans data |
 
 This means you can download overnight, close R, and load the results
 later.
@@ -164,13 +167,13 @@ ineptr2 adds several methods that had no equivalent in ineptR:
 
 ## Summary
 
-|                                    | ineptR                 | ineptr2                                              |
-|------------------------------------|------------------------|------------------------------------------------------|
-| Interface                          | 5 standalone functions | R6 client object                                     |
-| Dependencies                       | 11                     | 4                                                    |
-| Rows per API request               | 40 000 (max)           | 1 000 000 (max)                                      |
-| File-based caching                 | No                     | Chunk, data, and metadata layers                     |
-| Download without loading to memory | No                     | `download_data()` + `load_raw_data()` / `get_data()` |
-| Resume interrupted downloads       | No                     | Automatic via manifest                               |
-| Preview chunk plan                 | No                     | `preview_chunks()`                                   |
-| Indicator catalog                  | No                     | `get_catalog()` / `download_catalog()`               |
+|  | ineptR | ineptr2 |
+|----|----|----|
+| Interface | 5 standalone functions | R6 client object |
+| Dependencies | 11 | 4 |
+| Rows per API request | 40 000 (max) | 1 000 000 (max) |
+| File-based caching | No | Chunk, data, and metadata layers |
+| Download without loading to memory | No | `download_data()` + `load_raw_data()` / `get_data()` |
+| Resume interrupted downloads | No | Automatic via manifest |
+| Preview chunk plan | No | `preview_chunks()` |
+| Indicator catalog | No | `get_catalog()` / `download_catalog()` |
