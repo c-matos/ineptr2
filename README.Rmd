@@ -44,11 +44,11 @@ The package targets [version 2 of the INE API](https://www.ine.pt/xportal/xmain?
 
 ```r
 # From CRAN
-# install.packages("ineptr2") # Currently waiting publication on CRAN
+install.packages("ineptr2")
 
 # Development version from GitHub
 # install.packages("devtools")
-devtools::install_github("c-matos/ineptr2")
+pak::pak("c-matos/ineptr2")
 ```
 
 ## Quick example
